@@ -19,6 +19,8 @@
   dnf:
     name: "{{ vbox_guest_missing_deps }}"
     state: latest
+  when: vbox_guest_missing_deps is defined
+
 
 - name: Mount VBoxGuestAdditions.iso
   mount:
@@ -46,6 +48,7 @@
   dnf:
     name: "{{ vbox_guest_missing_deps }}"
     state: absent
+  when: vbox_guest_missing_deps is defined
 
 - name: Find /var/log/vboxadd-* logs
   find:
