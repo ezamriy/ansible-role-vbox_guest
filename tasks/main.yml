@@ -13,6 +13,8 @@
     - kernel-headers
     - make
     - perl
+    - binutils
+    - bzip2
   when: item not in ansible_facts.packages|list
 
 - name: Install VirtualBox Guest Additions dependencies
